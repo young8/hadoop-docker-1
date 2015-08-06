@@ -8,7 +8,7 @@ http://download.oracle.com/otn-pub/java/jdk/7u80-b15/jdk-7u80-linux-x64.tar.gz \
 | tar -xz --strip-components=1 -C /java
 
 RUN mkdir -p /hadoop && curl -kL \
-http://apache.communilink.net/hadoop/common/hadoop-2.7.1/hadoop-2.7.1.tar.gz \
+http://www.us.apache.org/dist/hadoop/common/hadoop-2.7.1/hadoop-2.7.1.tar.gz \
 | tar -xz --strip-components=1 -C /hadoop
 
 ENV JAVA_HOME /java
