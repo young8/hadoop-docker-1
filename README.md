@@ -41,3 +41,11 @@ And you can open ``http://localhost:8088`` to monitor the running application.
 Hadoop Configuration
 ---
 Change them as you wish in ``conf`` folder. Currently I found it most convenient to attach them as a separate volume instead of baked them into the image. Let me know if you have a better idea!
+
+SWIM Traffic Replay
+---
+Modify the SWIM Dockerfile and build the SWIM docker image first, and run
+```bash
+docker build -t hadoop/swim swim
+docker run -it --rm -v `pwd`/conf:/conf --publish-service swim.hadoop --name swim -h swim hadoop/swim
+```
