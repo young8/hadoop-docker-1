@@ -1,4 +1,4 @@
-FROM hadoop/base
+FROM hadoop/spark
 
 RUN mkdir -p /swim
 

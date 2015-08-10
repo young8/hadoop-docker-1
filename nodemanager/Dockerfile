@@ -1,4 +1,4 @@
-FROM hadoop/base
+FROM hadoop/spark
 
 MAINTAINER Byron Yi <byi@connect.ust.hk>
 

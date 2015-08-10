@@ -9,7 +9,7 @@ Docker 1.8.0-dev
 Build the Images
 ---
 ```bash
-for image in base namenode datanode resourcemanager nodemanager;
+for image in base namenode datanode resourcemanager spark nodemanager ipyspark;
 do
   docker build -t hadoop/$image $image
 done
@@ -41,6 +41,13 @@ And you can open ``http://localhost:8088`` to monitor the running application.
 Hadoop Configuration
 ---
 Change them as you wish in ``conf`` folder. Currently I found it most convenient to attach them as a separate volume instead of baked them into the image. Let me know if you have a better idea!
+
+IPython Notebook on Spark
+---
+```bash
+docker run -d -v `pwd`/conf:/conf --publish-service ipyspark.hadoop --name ipyspark -h ipyspark -p 4040:4040 -p 8888:8888 hadoop/ipyspark
+```
+Now open ``http://localhost:8888`` and enjoy! (Use port ``4040`` to access Spark Web UI)
 
 SWIM Traffic Replay
 ---
